@@ -2,6 +2,10 @@
 
 ## Trilha (NODEJS)
 
+<p align="center">
+  <img alt="License" src="">
+</p>
+
 ### Regras
 
 - Cadastro de usuário
