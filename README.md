@@ -3,7 +3,7 @@
 ## Trilha (NODEJS)
 
 <p align="center">
-  <img alt="License" src="">
+  <img alt="License" src="https://github.com/adreider/NLW-6-NODEJS/blob/main/.github/preview.png?raw=true">
 </p>
 
 ### Regras
