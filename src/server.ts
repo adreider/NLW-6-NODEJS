@@ -2,7 +2,7 @@ import "reflect-metadata";
 import express, { Request, Response, NextFunction } from "express";'express';
 import "express-async-errors";
 
-import { router } from "./routes";
+import { router } from "./routes/routes";
 
 import "./database"
 
@@ -28,4 +28,6 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
 app.listen(3000, () => {
   console.log('Server is running!')
 })
+
+
 

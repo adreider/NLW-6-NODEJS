@@ -1,8 +1,6 @@
 import { getCustomRepository } from "typeorm";
 import { TagRepositories } from "../repositories/TagRepositories";
 
-
-
 class CreateTagService {
 
   async execute(name: string) {
@@ -16,14 +14,15 @@ class CreateTagService {
     const tagAlreadyExists = await tagsRepositories.findOne({ name })
 
     if(tagAlreadyExists) {
-      throw new Error("Tag already exists");
+      throw new Error("Tag already exists")
     }
 
     const tag = tagsRepositories.create({ name })
 
-    await tagsRepositories.save(tag);
+    await tagsRepositories.save(tag)
 
     return tag;
+
   }
 
 }
