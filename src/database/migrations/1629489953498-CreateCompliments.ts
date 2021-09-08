@@ -19,6 +19,45 @@ export class CreateCompliments1629489953498 implements MigrationInterface {
                     {
                         name: "user_receiver",
                         type: "uuid",
+                    },
+                    {
+                        name: "tag_id",
+                        type: "uuid"
+                    },
+                    {
+                        name: "message",
+                        type: "varchar",
+                    },
+                    {
+                        name: "created_at",
+                        type: "timestamp",
+                        default: "now()"
+                    }
+                ],
+                foreignKeys: [
+                    {
+                        name: "FKUserSenderCompliments",
+                        referencedTableName: "users",
+                        referencedColumnNames: ["id"],
+                        columnNames: ["user_sender"],
+                        onDelete: "SET NULL",
+                        onUpdate: "SET NULL",
+                    },
+                    {
+                        name: "FKUserReceiverCompliments",
+                        referencedTableName: "users",
+                        referencedColumnNames: ["id"],
+                        columnNames: ["user_receiver"],
+                        onDelete: "SET NULL",
+                        onUpdate: "SET NULL",
+                    },
+                    {
+                        name: "FKTagCompliments",
+                        referencedTableName: "tags",
+                        referencedColumnNames: ["id"],
+                        columnNames: ["tag_id"],
+                        onDelete: "SET NULL",
+                        onUpdate: "SET NULL",
                     }
                 ]
             })
@@ -26,6 +65,7 @@ export class CreateCompliments1629489953498 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.dropTable("compliments")
     }
 
 }
