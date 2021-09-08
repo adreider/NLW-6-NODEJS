@@ -7,12 +7,11 @@ interface IUserRequest {
   email: string;
   admin?: boolean;
   password: string;
-  avatar: string;
 }
 
 class CreateUserService {
 
-  async execute({ name, email, admin, password, avatar }: IUserRequest) {
+  async execute({ name, email, admin, password }: IUserRequest) {
     const usersRepository = getCustomRepository(UsersRepositories);
 
     if (!email) {
@@ -33,7 +32,6 @@ class CreateUserService {
       name,
       email,
       admin,
-      avatar,
       password: passwordHash,
     })
 
